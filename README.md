@@ -1,5 +1,16 @@
 # Introduzione
 
+Nella repository sono contenute tre directory:
+
+-   *ProjectFrontend*, che contiene i file relativi al frontend in Angular della web app.
+
+-   *MasterBackend*, che contiene i file relativi al backend (Spring boot) della web app, il quale gestisce l'autenticazione e la connessione con i nodi.
+
+-   *NodeBackend*, che contiene i file relativi ai nodi che gestiscono i dati (Spring boot).
+
+
+# Introduzione
+
 L'applicazione presentata mira ad offrire un servizio che permette la
 condivisione di documenti tramite una rete distribuita.\
 Di particolare interesse è il fatto che questi siano memorizzati in più
