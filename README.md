@@ -1,4 +1,4 @@
-# Introduzione
+# Repository Info
 
 Nella repository sono contenute tre directory:
 
