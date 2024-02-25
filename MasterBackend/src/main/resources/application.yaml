@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          cognito:
+            issuerUri: # insert issuer Uri
+aws:
+  access-key: # insert access key
+  secret-key: # insert secret key
+  region: # insert region
+  cognito:
+    user-pool-id: # insert user pool id
+    app-client-id: # insert client id
+    app-client-secret: # insert client secret
+vpc:
+  id: # insert vpc id

@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+a {
+    color: #2f0b63 !important;
+    font-size: large;
+    text-decoration: none;
+}
+
+.home {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../../../assets/images/background.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: row;
+
+}
+.home::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-out;
+}
+.home.show::before {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.container{
+    margin: 15px 0 15px 150px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    width: 100%;
+    height: 95%;
+    z-index: 1;
+}
+
+.scrollbar{
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.scrollbar:hover{
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.fa-lg {
+    font-size: 1em;
+
+}
+.fa {
+    position: relative;
+    display: table-cell;
+    width: 55px;
+    height: 36px;
+    text-align: center;
+    top:12px;
+    font-size:20px;
+}
+
+
+
+.main-menu:hover, nav.main-menu.expanded {
+    width: 250px;
+    overflow:hidden;
+    opacity:1;
+    z-index: 2;
+}
+
+.main-menu {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 55px;
+    background-color: #fff;
+    border-radius: 30px;
+    overflow: hidden;
+    position:absolute;
+    height:95%;
+    width: 87px;
+    transition:width .2s linear;
+    box-shadow: 1px 0 15px rgba(0, 0, 0, 0.17);
+    opacity:1;
+    z-index: 2;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.main-menu li {
+    position:relative;
+    display:block;
+    width:250px;
+}
+
+.fa-1x{
+    font-size: 1.5em;
+}
+
+.ps-4 {
+    padding-left: 1.95rem !important;
+}
+
+.mt-6 {
+    margin-top: 22.5em !important;
+}
+
+li:hover{
+    cursor: pointer;
+    border-radius: 13px;
+    background-color: #e7e6eb;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,95 @@
+<header class="header">
+    <nav class="nav">
+        <a href="" class="nav_logo">ReplicationProject</a>
+        <a href="/login" class="login-button">Login</a>
+    </nav>
+</header>
+<div [ngClass]="{'body': true, 'not-visible': !aboutUs}">
+    <div class="wrapper-about-us">
+        <div class="banner-content">
+            <h3>Chi Siamo</h3>
+            <br>
+            <p>
+                Siamo <b style="font-size: 18px;">ReplicationProject</b>, un servizio che permette la condivisione sicura e affidabile di documenti tramite una rete distribuita. Il nostro obiettivo è semplificare la ricerca e il download di documenti memorizzati su più repliche, assicurando un accesso rapido e affidabile.
+            </p>
+            <br>
+            <h3>La Nostra Missione</h3>
+            <br>
+            <p>
+                Ci impegniamo a offrire un'esperienza di condivisione documenti decentralizzata, garantendo un servizio efficiente e sicuro. Collegandoci a nodi distribuiti, consentiamo agli utenti di accedere ai documenti desiderati in modo affidabile.
+            </p>
+            <br>
+            <h3>Come Funziona</h3>
+            <br>
+            <p>
+                Dopo la registrazione su un server centrale, gli utenti possono cercare i documenti per nome. Noi contattiamo i nodi attivi per trovare e scaricare il documento richiesto da uno dei nodi selezionati, ottimizzando il processo per garantire un download veloce e cancellando le richieste agli altri nodi.
+            </p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>
+                Grazie d'aver scelto <b style="font-size: 18px;">ReplicationProject</b>, dove la condivisione di documenti è sicura, veloce e affidabile!
+            </p>
+            <br>
+        </div>
+    </div>
+</div>
+<div [ngClass]="{'body': true, 'not-visible': aboutUs}">
+    <div class="wrapper">
+        <h2>We want&nbsp;
+            <span>the best for you.</span>
+            <span>simplicity.</span>
+            <span>reliability.</span>
+            <span>security.</span>
+            <span>decentralization.</span>
+        </h2>
+        <p>ReplicationProject is a service that allows secure and reliable sharing of documents via a distributed network.
+            Our goal is to simplify the search and download of documents stored on multiple replicas.</p>
+        <a (click)="aboutUs = true;">About Us</a>
+    </div>
+</div>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 24 150 28"
+    preserveAspectRatio="none"
+>
+    <defs>
+        <path
+            id="gentle-wave"
+            d="M-160 44c30 0
+        58-18 88-18s
+        58 18 88 18
+        58-18 88-18
+        58 18 88 18
+        v44h-352z"
+        />
+    </defs>
+    <g class="waves">
+        <use
+            xlink:href="#gentle-wave"
+            x="50"
+            y="0"
+            fill="#A2A2FFFF"
+            fill-opacity=".1"
+        />
+        <use
+            xlink:href="#gentle-wave"
+            x="50"
+            y="3"
+            fill="#A2A2FFFF"
+            fill-opacity=".3"
+        />
+        <use
+            xlink:href="#gentle-wave"
+            x="50"
+            y="6"
+            fill="#A2A2FFFF"
+            fill-opacity=".3"
+        />
+    </g>
+</svg>
+

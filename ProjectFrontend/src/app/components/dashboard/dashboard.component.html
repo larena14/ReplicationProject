@@ -1,0 +1,29 @@
+<section class="home">
+    <div class="main-menu">
+        <div class="scrollbar" id="style-1">
+            <ul>
+                <li class="ps-4 py-3 mt-4" [routerLink]="['/dashboard/files']">
+                    <fa-icon [icon]="transferIcon" class="me-5 fa-1x" style="color: #2f0b63"></fa-icon>
+                    <a>Files</a>
+                </li>
+                <li class="ps-4 py-3" [routerLink]="['/dashboard/user']">
+                    <fa-icon [icon]="userIcon" class="me-5 fa-1x" style="color: #2f0b63"></fa-icon>
+                    <a>User</a>
+                </li>
+                <li class="ps-4 py-3" [routerLink]="['/dashboard/about-us']">
+                    <fa-icon [icon]="aboutIcon" class="me-5 fa-1x" style="color: #2f0b63"></fa-icon>
+                    <a>About Us</a>
+                </li>
+                <li class="ps-4 py-3 mt-6" (click)="logout()">
+                    <fa-icon [icon]="logoutIcon" class="me-5 fa-1x" style="color: #2f0b63"></fa-icon>
+                    <a>Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <router-outlet>
+
+        </router-outlet>
+    </div>
+</section>

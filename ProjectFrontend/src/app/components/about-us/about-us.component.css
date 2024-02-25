@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    gap: 50px;
+    padding: 0 80px;
+    text-align: center;
+    height: 100vh;
+    background: #ffffff;
+}
+
+.banner-content{
+    column-count: 2;
+    column-gap: 50px;
+    column-rule-style: solid;
+    column-rule-width: 2px;
+    column-rule-color: #2F0B63FF;
+    margin-bottom: 2rem !important;
+    color: #2F0B63FF;
+}
+
+.banner h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.banner p {
+    margin: 0;
+    line-height: 1.65;
+    font-size: 17px;
+    text-align: justify;
+}
+
+@media (width >= 420px) {
+    .banner > img {
+        width: 40vw;
+    }
+}
+
+@media (width >= 648px) {
+    .banner {
+        text-align: left;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .banner > img {
+        width: 30vw;
+    }
+}
+
+.waves > use {
+    animation: move-forever 2s -2s linear infinite;
+}
+
+.waves > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 6s;
+}
+.waves > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 3s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate(-90px, 0%);
+    }
+    100% {
+        transform: translate(85px, 0%);
+    }
+}
+
+svg {
+    border-radius: 30px;
+    margin-left: 150px;
+    margin-bottom: 19px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 86%;
+    height: 10vw;
+    max-height: 100px;
+}

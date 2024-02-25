@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.alert-dialog{
+    background-color: #ffffff;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden !important;
+}
+
+.alert-title{
+    width: 80%;
+    margin-top: 0.70rem;
+    border-bottom: 1px solid #2F0B63FF;
+    text-align: center;
+}
+
+.alert-file{
+    width: 80%;
+    margin-top: 0.60rem;
+    text-align: center;
+}
+
+.alert-file input{
+    background-color: #ececec;
+    border-radius: 5px;
+    margin: 0.1em;
+}
+
+.alert-file input::file-selector-button{
+    border: 2px solid #2F0B63FF;
+    background: #2F0B63FF;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    width: 90px;
+    height: 30px;
+    margin: 0.8em;
+}
+
+.alert-body{
+    width: 80%;
+    min-height: 200px !important;
+    max-height: 300px !important;
+    margin-left: 0.30rem;
+    margin-right: 0.30rem;
+    text-align: center;
+    border-bottom: 1px solid #2F0B63FF;
+    overflow: auto !important;
+}
+
+.alert-actions{
+    align-items: center;
+}
+
+h2{
+    font-size: 26px;
+    color: black;
+    text-align: center;
+    font-weight: 300;
+    line-height: 40px;
+    margin: 0 0 16px;
+}
+
+p {
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    font-weight: 300;
+    line-height: 40px;
+    margin: 0 0 16px;
+}
+
+.button-primary{
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 0 14px;
+    padding: 6px 24px;
+    background-image: linear-gradient(to right, #502a81 0%, #2f0b63 51%, #502a81 100%);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.button-primary:active {
+    transform: scale(0.98);
+}
+
+.button-primary:hover{
+    color: #2F0B63FF;
+    background-color: white;
+    background-image: none;
+    border: 2px solid #2F0B63FF;
+}
+
+.button-second{
+    color: #2F0B63FF;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 0 14px;
+    padding: 6px 24px;
+    background-image: linear-gradient(to right, #dfdde1 0%, rgb(194, 194, 194) 100%);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.button-second:active {
+    transform: scale(0.98);
+}
+
+.button-second:hover{
+    color: #2F0B63FF;
+    background-color: white;
+    background-image: none;
+    border: 2px solid #2F0B63FF;
+}
+
+.icon{
+    font-size: 1em;
+    color: #2f0b63;
+    align-self: baseline !important;
+    cursor: pointer;
+}
+
+

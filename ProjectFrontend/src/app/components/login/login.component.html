@@ -1,0 +1,55 @@
+<header class="header">
+    <nav class="nav">
+        <a href="#" class="nav_logo">ReplicationProject</a>
+    </nav>
+</header>
+
+<!-- Home -->
+<p-toast></p-toast>
+<section class="home">
+    <div [ngClass]="{ 'container': true, 'active': active }">
+    <div class="form-container sign-up">
+        <form #formSignup="ngForm" id="signupForm" [formGroup]="formSignupControl" (submit)="signup()">
+            <h1>Sign In</h1>
+            <input type="email" placeholder="Email" #emailSignup [formControl]="emailSignupControl" (input)="input()">
+            <mat-error *ngIf="(emailSignupControl?.invalid && (emailSignupControl?.dirty || emailSignupControl?.touched)) || (!formSignup.valid && formSignup.submitted)">{{getErrorMessage(emailSignupControl)}}</mat-error>
+            <input placeholder="Username" #usernameSignup [formControl]="usernameSignupControl" (input)="input()">
+            <mat-error *ngIf="(usernameSignupControl?.invalid && (usernameSignupControl?.dirty || usernameSignupControl?.touched)) || (!formSignup.valid && formSignup.submitted)">{{getErrorMessage(usernameSignupControl)}}</mat-error>
+            <input type="password" placeholder="Password" #passwordSignup [formControl]="passwordSignupControl" (input)="input()">
+            <mat-error *ngIf="(passwordSignupControl?.invalid && (passwordSignupControl?.dirty || passwordSignupControl?.touched)) || (!formSignup.valid && formSignup.submitted)">{{getErrorMessage(passwordSignupControl)}}</mat-error>
+            <button type="submit" form="signupForm" [disabled]="!formSignup.valid">Sign Up</button>
+            <mat-error style="margin-top: 25px;font-size: 15px;" *ngIf="formSignup.submitted && unregistered">{{getRequestSignupErrorMessage()}}</mat-error>
+        </form>
+    </div>
+    <div class="form-container sign-in">
+        <form #form="ngForm" id="loginForm" [formGroup]="formControl" (submit)="login()">
+            <h1>Sign In</h1>
+            <input placeholder="Username" #username [formControl]="usernameControl" (input)="input()">
+            <mat-error *ngIf="(usernameControl?.invalid && (usernameControl?.dirty || usernameControl?.touched)) || (!form.valid && form.submitted)">{{getErrorMessage(usernameControl)}}</mat-error>
+            <input type="password" placeholder="Password" #password [formControl]="passwordControl" (input)="input()">
+            <mat-error *ngIf="(passwordControl?.invalid && (passwordControl?.dirty || passwordControl?.touched)) || (!form.valid && form.submitted)">{{getErrorMessage(passwordControl)}}</mat-error>
+            <a (click)="forgetPassword()" style="cursor: pointer;">Forget Your Password?</a>
+            <button type="submit" form="loginForm" [disabled]="!form.valid">Sign In</button>
+            <mat-error style="margin-top: 25px;font-size: 15px;" *ngIf="form.submitted && unauthenticated">{{getRequestErrorMessage()}}</mat-error>
+        </form>
+    </div>
+    <div class="toggle-container">
+        <div class="toggle">
+            <div class="toggle-panel toggle-left">
+                <h1>Welcome Back!</h1>
+                <p>Enter your personal details to use all of site features</p>
+                <button class="hidden-signin" id="login" (click)="switch()">Sign In</button>
+            </div>
+            <div class="toggle-panel toggle-right">
+                <h1>Welcome, Friend!</h1>
+                <p>Enter your personal details to use all of site features</p>
+                <button class="hidden-signup" id="register" (click)="switch()">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</section>
+

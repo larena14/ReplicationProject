@@ -1,0 +1,9 @@
+server:
+  port: 8090
+aws:
+  access-key: # insert access key
+  secret-key: # insert secret key
+  region: # insert region
+bucket:
+  name: # insert bucket name
+

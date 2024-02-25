@@ -1,0 +1,13 @@
+<div class="alert-dialog">
+    <div class="alert-title">
+        <h2 class="mt-1">
+            <fa-icon class="icon" [icon]="icon"></fa-icon>{{title}}</h2>
+    </div>
+    <div class="alert-body">
+        <p class="mt-5 mb-5">{{message}}</p>
+    </div>
+    <hr>
+    <div class="alert-actions pb-2">
+        <button class="btn button-primary" (click)="closeDialog()">{{buttonText}}</button>
+    </div>
+</div>

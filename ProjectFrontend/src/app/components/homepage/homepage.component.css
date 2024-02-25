@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+.not-visible{
+    display: none;
+}
+
+.body{
+    margin: 0;
+    padding: 0;
+    background-image: url(../../../assets/images/background.png);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+}
+
+.header {
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    z-index: 100;
+    padding: 50px 20px;
+}
+.nav {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+.nav,
+.nav_item {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav_logo{
+    color: #fff;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+.nav_logo {
+    font-size: 25px;
+}
+.nav_logo:hover{
+    cursor: pointer;
+}
+.login-button{
+    color: #2F0B63FF;
+    text-decoration: none;
+    padding: 10px 25px;
+    background-image: linear-gradient(to right, #dfdde1 0%, rgb(194, 194, 194) 100%);
+    border-radius: 6px;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper-about-us{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 70%;
+    background-color: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(25px);
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.banner-content{
+    column-count: 2;
+    column-gap: 50px;
+    padding: 10px !important;
+    color: #ffffff;
+}
+
+.wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 40%;
+    background-color: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(25px);
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.wrapper h2{
+    padding: 0;
+    color: #ffffff;
+    text-shadow: 0 2px 0 rgba(0,0,0,0.5);
+    font-size: 60px;
+    margin: 30px 0 0;
+}
+
+.wrapper p{
+    color: #ffffff;
+    text-shadow: 0 2px 0 rgba(0,0,0,0.5);
+    font-size: 18px;
+    line-height: 35px;
+    font-weight: 500;
+    margin: 10px 0 0;
+}
+
+.wrapper a{
+    color: #2F0B63FF;
+    text-decoration: none;
+    padding: 10px 25px;
+    background-image: linear-gradient(to right, #dfdde1 0%, rgb(194, 194, 194) 100%);
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.wrapper a:hover{
+    cursor: pointer;
+}
+
+.wrapper span{
+    margin-top: 30px;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    animation: animate 10s linear infinite;
+    opacity: 0;
+    color: #ffffff;
+}
+
+@keyframes animate {
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    2%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    18%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    20%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+.wrapper span:nth-child(1){
+    animation-delay: 0s;
+}
+.wrapper span:nth-child(2){
+    animation-delay: 2s;
+}
+.wrapper span:nth-child(3){
+    animation-delay: 4s;
+}
+.wrapper span:nth-child(4){
+    animation-delay: 6s;
+}
+.wrapper span:nth-child(5){
+    animation-delay: 8s;
+}
+
+
+.waves > use {
+    animation: move-forever 2s -2s linear infinite;
+}
+
+.waves > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 6s;
+}
+.waves > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 3s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate(-90px, 0%);
+    }
+    100% {
+        transform: translate(85px, 0%);
+    }
+}
+
+svg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100% !important;
+    height: 10vw;
+    max-height: 100px;
+
+}

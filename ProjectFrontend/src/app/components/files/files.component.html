@@ -1,0 +1,103 @@
+<div class="center">
+    <p-toast></p-toast>
+    <div [ngClass]="{ 'ring' :  true, 'not-visible' : !loading }"></div>
+    <span [ngClass]="{ 'not-visible' : !loading }">Loading...</span>
+    <div [ngClass]="{'main-content' : true,  'not-visible': loading }">
+        <div class="input-group" style="margin-bottom: 0.2rem !important;">
+            <input [(ngModel)]="inputValue" type="text" class="form-control"  style="margin-left: 3rem !important; border-radius: 10px !important;" placeholder="Search...">
+            <div class="input-group-append">
+                <select [(ngModel)]="selectedOption"  class="select-class" >
+                    <option selected>All nodes</option>
+                    <option *ngFor="let item of Array.from(this.nodeMap.keys())">
+                        {{item}}
+                    </option>
+                </select>
+                <button class="btn" style="margin-left: 0.5rem !important;" type="button" (click)="search(inputValue)">Search</button>
+                <button class="btn" style="margin-left: 0.5rem !important;" type="button" (click)="randomPutObjectNode()">Upload</button>
+                <fa-icon class="info-icon" [icon]="infoIcon" (click)="getInfo()"></fa-icon>
+            </div>
+        </div>
+        <div class="container-one">
+            <div class="container-two">
+                <!-- Node Table -->
+                <h3 style="margin-bottom: 0 !important; margin-top: 1rem !important;">Nodes Table</h3>
+                <div class="tablerounededCorner">
+                    <div [ngClass]="{ 'demo-container' :  true, 'not-visible' : !loadingTable1 }">
+                        <div class="progress-bar">
+                            <div class="progress-bar-value"></div>
+                        </div>
+                    </div>
+                    <table [ngClass]="{ 'table table-bordered roundedTable' :  true, 'waiting-table' : loadingTable1 }">
+                        <thead>
+                        <tr>
+                            <th scope="col">Tag</th>
+                            <th scope="colgroup">Actions</th>
+                            <th scope="colgroup" style="width: 3px !important;"><fa-icon class="refresh-icon" [icon]="refreshIcon" (click)="refreshNodeTable()"></fa-icon></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let item of Array.from(this.nodeMap.keys())">
+                            <td>{{item}}</td>
+                            <td colspan="2">
+                                <fa-icon class="download-icon" [icon]="checkIcon" style="padding: 6px;" (click)="testNode(item)"></fa-icon>
+                                <fa-icon class="download-icon" [icon]="listIcon" style="padding: 6px;" (click)="listObjectsNode(item)"></fa-icon>
+                                <fa-icon class="download-icon" [icon]="uploadIcon" style="padding: 6px;" (click)="putObjectNode(item)"></fa-icon>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Objects Table -->
+                <h3 style="margin-bottom: 0 !important;">Objects Table</h3>
+                <div class="tablerounededCorner">
+                    <div [ngClass]="{ 'demo-container' :  true, 'not-visible' : !loadingTable2 }">
+                        <div class="progress-bar">
+                            <div class="progress-bar-value"></div>
+                        </div>
+                    </div>
+                    <table [ngClass]="{ 'table table-bordered roundedTable' :  true, 'waiting-table' : loadingTable2 }">
+                        <thead>
+                        <tr>
+                            <th scope="col">File name</th>
+                            <th scope="col">Node tag</th>
+                            <th scope="colgroup">Actions</th>
+                            <th scope="colgroup" style="width: 3px !important;"><fa-icon class="refresh-icon" [icon]="clearIcon" (click)="clearObjectTable()"></fa-icon></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let item of this.nodeObjectList">
+                            <td>{{item.fileName}}</td>
+                            <td>{{item.nodeTag}}</td>
+                            <td colspan="2">
+                                <fa-icon *ngIf="(item.downloadStatus === 'ready')" class="download-icon" style="padding: 6px;" [icon]="downloadIcon" (click)="getObject(item); "></fa-icon>
+                                <fa-icon *ngIf="(item.downloadStatus === 'loading')" class="download-icon spinning-icon" style="padding: 6px; cursor: default;" [icon]="loadingIcon"></fa-icon>
+                                <fa-icon *ngIf="(item.downloadStatus === 'success')" class="download-icon" style="padding: 6px; cursor: default;" [icon]="successIcon"></fa-icon>
+                                <fa-icon class="download-icon" [icon]="linkIcon" style="padding: 6px;" (click)="getObjectURL(item.nodeTag, item.fileName)"></fa-icon>
+                                <fa-icon class="download-icon" [icon]="deleteIcon" style="padding: 6px;" (click)="deleteObject(item.nodeTag, item.fileName)"></fa-icon>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container-three">
+                <div class="map-container"
+                     leaflet
+                     [leafletOptions]="options"
+                     (leafletMapReady)="onMapReady($event)">
+                </div>
+                <div class="info-container">
+                    <h2>Online Nodes</h2>
+                    <div class="text-container">
+                        <fa-icon class="nodes-icon" [icon]="nodeIcon"></fa-icon>
+                        <p style="color: white; font-size: 40px; margin-bottom: 0;">{{nodeMap.size}}</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

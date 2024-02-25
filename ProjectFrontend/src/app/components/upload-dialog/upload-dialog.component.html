@@ -1,0 +1,47 @@
+<p-toast></p-toast>
+<div class="alert-dialog">
+    <div class="alert-title">
+        <h2 class="mt-1">{{title}}</h2>
+    </div>
+    <div class="alert-file" >
+
+        <input *ngIf="files.length === 0" type="file" multiple (change)="onChange($event)"/>
+    </div>
+    <div *ngIf="files.length !== 0" style="font-size: 11px; margin-bottom: 0.5em !important;">* To add new elements, empty the list and recompile it.</div>
+    <div class="alert-body">
+        <table class="table" style="margin-top: 0.7rem;">
+            <thead>
+            <tr>
+                <th scope="col">File Name</th>
+                <th scope="col">Status</th>
+                <th scope="col" style="width: 3px !important;"><fa-icon class="icon" [icon]="clearIcon" (click)="clearFileList()"></fa-icon></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of files">
+                <td>{{item.file.name}}</td>
+                <td>
+                    <section [ngSwitch]="item.status">
+                        <p *ngSwitchCase="'uploading'"><fa-icon class="icon" style="cursor: default;" [icon]="uploadingIcon"></fa-icon></p>
+                        <p *ngSwitchCase="'success'"><fa-icon class="icon" style="cursor: default;" [icon]="successIcon"></fa-icon></p>
+                        <p *ngSwitchCase="'fail'"><fa-icon class="icon" style="cursor: default;" [icon]="failIcon"></fa-icon></p>
+                        <p *ngSwitchDefault><fa-icon class="icon" style="cursor: default;" [icon]="initialIcon"></fa-icon></p>
+                    </section>
+                </td>
+                <td>
+                    <section>
+                        <p><fa-icon class="icon" [icon]="deleteIcon" (click)="removeFileFromList(item)"></fa-icon></p>
+                    </section>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="alert-actions pb-2" style="margin-top: 0.7rem;">
+        <div style="margin-top: 0.5em !important;">
+            <button (click)="onUpload()" class="btn button-primary" style="margin-right: 0.15em;">Upload</button>
+            <button class="btn button-second" style="margin-left: 0.15em;" (click)="closeDialog()">Close</button>
+        </div>
+    </div>
+
+</div>
