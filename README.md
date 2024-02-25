@@ -8,7 +8,7 @@ termini di accessibilità, dal momento che ogni utente può salvare o
 scaricare dal nodo che più gli è congeniale (magari quello più vicino),
 sia in termini di \"resistenza ai guasti\", dato che la cancellazione
 accidentale (e non) di uno di questi non pregiudica la sua esistenza nel
-sistema.\
+sistema.
 
 ## Tecnologie utilizzate
 
@@ -74,7 +74,8 @@ AWS:
 -   *S3 Bucket*, è un contenitore di oggetti, usato per memorizzare i
     file associati ad ogni nodo.
 
-![Architettura](architettura)
+![Architettura](https://github.com/larena14/ReplicationProject/blob/ac67555e433840dd34377e1ed428d98ca46cfe9b/readme_images/architettura.jpg)
+
 
 # Nodi di archiviazione dati
 
@@ -132,7 +133,7 @@ da AccessKey e SecretAccessKey) così da poter inviare le richieste ad
 AWS direttamente dal codice.\
 Di seguito vengono presentati due dei punti cardine
 dell'implementazione: la classe di servizio che si occupa della gestione
-dei dati su S3 e il controller delle Rest API esportate da ogni nodo.\
+dei dati su S3 e il controller delle Rest API esportate da ogni nodo.
 
 # Nodo Backend
 
@@ -219,13 +220,13 @@ Di seguito l'implementazione.
 
 ## Alcuni screenshot dell'applicazione
 
-![Homepage](homepage)
+![Homepage](https://github.com/larena14/ReplicationProject/blob/ac67555e433840dd34377e1ed428d98ca46cfe9b/readme_images/homepage.png)
 
-![Login](login)
+![Login](https://github.com/larena14/ReplicationProject/blob/ac67555e433840dd34377e1ed428d98ca46cfe9b/readme_images/login.png)
 
-![Signup](signin)
+![Signup](https://github.com/larena14/ReplicationProject/blob/ac67555e433840dd34377e1ed428d98ca46cfe9b/readme_images/signin.png)
 
-![Dashboard](dashboard)
+![Dashboard](https://github.com/larena14/ReplicationProject/blob/ac67555e433840dd34377e1ed428d98ca46cfe9b/readme_images/dashboard.png)
 
 # Amazon VPC e Security Groups
 
@@ -261,7 +262,7 @@ il Nodo Backend e i Nodi di archiviazione dei dati ed un'altra per il
 Nodo Frontend.\
 Nel seguito viene presentata la configurazione della prima VPC citata.
 
-![Configurazione VPC](vpc)
+![Configurazione VPC](https://github.com/larena14/ReplicationProject/blob/ac67555e433840dd34377e1ed428d98ca46cfe9b/readme_images/vpc.png)
 
 ## Security Groups
 
@@ -279,14 +280,14 @@ possono lasciare le risorse. In più è possibile specificare protocolli
 Di seguito vengono riportate le configurazioni dei Security Groups usati
 per isolare i nodi presenti nelle VPC.
 
-![image](sg_node)
+![image](https://github.com/larena14/ReplicationProject/blob/ac67555e433840dd34377e1ed428d98ca46cfe9b/readme_images/sg_node.png)
 
-![Inbound e Outbound Rules per la VPC che si occupa dei nodi](sg_node2)
+![Inbound e Outbound Rules per la VPC che si occupa dei nodi](https://github.com/larena14/ReplicationProject/blob/ac67555e433840dd34377e1ed428d98ca46cfe9b/readme_images/sg_node2.png)
 
-![image](sg_fe)
+![image](https://github.com/larena14/ReplicationProject/blob/ac67555e433840dd34377e1ed428d98ca46cfe9b/readme_images/sg_fe.png)
 
 ![Inbound e Outbound Rules per la VPC che si occupa del
-frontend](sg_fe2)
+frontend](https://github.com/larena14/ReplicationProject/blob/ac67555e433840dd34377e1ed428d98ca46cfe9b/readme_images/sg_fe2.png)
 
 \
 Infine è doveroso precisare che, seppur il server dei nodi di
